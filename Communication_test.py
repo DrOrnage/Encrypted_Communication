@@ -1,4 +1,4 @@
- from machine import Pin
+from machine import Pin
 import time
 
 red = Pin(15, Pin.OUT)
@@ -23,7 +23,6 @@ def base2_light(s):
             greencount += 1
     redcountans = int(input"How many times did the red light flash?")
     if redcountans == redcount:
-<<<<<<< Updated upstream
         print("You're correct!")
     else:
         print("You're wrong!")
@@ -32,7 +31,6 @@ def base2_light(s):
         print("You're correct!")
     else:
         print("You're wrong!")
-=======
         green.toggle()
         time.sleep(0.5)
         green.toggle()
@@ -70,7 +68,6 @@ def base2_light(s):
         red.toggle()
         time.sleep(1)
     return None
->>>>>>> Stashed changes
 
 def end():
     green.toggle()
