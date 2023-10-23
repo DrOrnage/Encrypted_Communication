@@ -7,9 +7,13 @@ green = Pin(14, Pin.OUT)
 
 
 def string_to_binary(x):
+  #Uses ord function which converts individual string into a value through ASCII table
   l = [(ord(i)) for i in x]
-  m = [(int(bin(i)[2:])) for i in l]
+  #the bin function converts each value in l to binary. It is slicing from 2 onwards because the function returns a prefix "0b" indicating that it is a binary value
+  m = [bin(i)[2:] for i in l]
+  m = [str(item) for item in m]
   return m
+
 
 
 def base2_light(s):
