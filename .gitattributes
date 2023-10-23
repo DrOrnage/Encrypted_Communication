@@ -1,2 +1,2 @@
-asodnasoidj = string.ascii_letters(input"enter")
-print(asodnasoidj)
+# Auto detect text files and perform LF normalization
+* text=auto
