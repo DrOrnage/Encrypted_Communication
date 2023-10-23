@@ -20,18 +20,6 @@ def wrong_input():
     return None
 
 
-def correct_input():
-    green.toggle()
-    time.sleep(0.3)
-    green.toggle()
-    time.sleep(0.3)
-    green.toggle()
-    time.sleep(0.3)
-    green.toggle()
-    time.sleep(1)
-    return None
-
-
 def string_to_binary(x):
   #Uses ord function which converts individual string into a value through ASCII table
   l = [(ord(i)) for i in x]
@@ -41,15 +29,6 @@ def string_to_binary(x):
   return m
 
 lst = string_to_binary(user)
-
-
-def string_to_binary(x):
-  #Uses ord function which converts individual string into a value through ASCII table
-  l = [(ord(i)) for i in x]
-  #the bin function converts each value in l to binary. It is slicing from 2 onwards because the function returns a prefix "0b" indicating that it is a binary value
-  m = [bin(i)[2:] for i in l]
-  m = [str(item) for item in m]
-  return m
 
 
 
@@ -69,16 +48,17 @@ def base2_light(s):
             time.sleep(1)
             greencount += 1
     redcountans = int(input"How many times did the red light flash?")
-    if redcountans == redcount:
-        correct_input()
-    else:
+    if redcountans != redcount:
         wrong_input()
-    greencountans = int(input"How many times did the green light flash?")
-    if greencountans == greencount:
-        correct_input()
+        return False
     else:
-        wrong_input()
-    return None
+        return True
+
+def check(n):
+    if base2_light(n):
+        return True
+    else:
+        check(n)
 
 def end():
     green.toggle()
@@ -95,6 +75,7 @@ def end():
     time.sleep(1)
 
 for i in lst:
-    base2_light(i)
+    if check(i):
+        pass
     end()
 
