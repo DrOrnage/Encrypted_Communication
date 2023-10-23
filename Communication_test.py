@@ -20,6 +20,18 @@ def wrong_input():
     return None
 
 
+def correct_input():
+    green.toggle()
+    time.sleep(0.3)
+    green.toggle()
+    time.sleep(0.3)
+    green.toggle()
+    time.sleep(0.3)
+    green.toggle()
+    time.sleep(1)
+    return None
+
+
 def string_to_binary(x):
   #Uses ord function which converts individual string into a value through ASCII table
   l = [(ord(i)) for i in x]
@@ -42,18 +54,30 @@ def string_to_binary(x):
 
 
 def base2_light(s):
-
+    pass
     for i in s:
         if i == '1':
             green.toggle()
             time.sleep(0.5)
             green.toggle()
             time.sleep(1)
+            redcount += 1
         else:
             red.toggle()
             time.sleep(0.5)
             red.toggle()
             time.sleep(1)
+            greencount += 1
+    redcountans = int(input"How many times did the red light flash?")
+    if redcountans == redcount:
+        correct_input()
+    else:
+        wrong_input()
+    greencountans = int(input"How many times did the green light flash?")
+    if greencountans == greencount:
+        correct_input()
+    else:
+        wrong_input()
     return None
 
 def end():
